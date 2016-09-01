@@ -1,0 +1,7 @@
+{
+	"name": "thunbolt/config",
+	"type": "library",
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
