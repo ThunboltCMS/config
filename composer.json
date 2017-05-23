@@ -3,5 +3,8 @@
 	"type": "library",
 	"autoload": {
 		"classmap": ["src/"]
+	},
+	"require": {
+		"php": ">=7.1"
 	}
 }
