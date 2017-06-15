@@ -6,6 +6,7 @@ namespace Thunbolt\Config\DI;
 
 use Nette\DI\CompilerExtension;
 use Thunbolt\Config\Config;
+use Thunbolt\Config\IConfig;
 
 class ConfigExtension extends CompilerExtension {
 
@@ -13,7 +14,8 @@ class ConfigExtension extends CompilerExtension {
 		$builder = $this->getContainerBuilder();
 
 		$builder->addDefinition($this->prefix('config'))
-			->setClass(Config::class, [$this->getConfig()]);
+			->setClass(IConfig::class)
+			->setFactory(Config::class, [$this->getConfig()]);
 	}
 
 }

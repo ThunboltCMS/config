@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Thunbolt\Config;
 
-class Config {
+class Config implements IConfig {
 
 	/** @var array */
 	private $values;
@@ -18,6 +18,24 @@ class Config {
 	 */
 	public function getValues(): array {
 		return $this->values;
+	}
+
+	// array access
+
+	public function offsetExists($offset): bool {
+		return isset($this->values[$offset]);
+	}
+
+	public function offsetGet($offset) {
+		return $this->values[$offset];
+	}
+
+	public function offsetSet($offset, $value) {
+		throw new ConfigException('offsetSet is forbidden.');
+	}
+
+	public function offsetUnset($offset) {
+		throw new ConfigException('offsetUnset is forbidden.');
 	}
 
 }
