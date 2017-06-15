@@ -14,9 +14,9 @@ class Config implements IConfig {
 	}
 
 	/**
-	 * @return array
+	 * @return iterable
 	 */
-	public function getValues(): array {
+	public function getValues(): iterable {
 		return $this->values;
 	}
 
