@@ -14,7 +14,7 @@ class ConfigExtension extends CompilerExtension {
 		$builder = $this->getContainerBuilder();
 
 		$builder->addDefinition($this->prefix('config'))
-			->setClass(IConfig::class)
+			->setType(IConfig::class)
 			->setFactory(Config::class, [$this->getConfig()]);
 	}
 
